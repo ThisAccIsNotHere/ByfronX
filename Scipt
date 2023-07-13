@@ -10953,7 +10953,7 @@ Function = function(Callback)
                 spawn(function()
                     pcall(function()
                         obj.Parent.Text = Messages[math.random(1, #Messages)]
-                        obj.Parent.TextColor3 = Color3.fromHSV(tick() % 5 / 128, 0, 128)
+                        obj.Parent.TextColor3 = Color3.fromHSV(tick()  128, 0, 128)
                     end)
                 end)
                 return game:GetService("TweenService"):Create(obj, ...)
