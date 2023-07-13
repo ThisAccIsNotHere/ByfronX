@@ -10868,7 +10868,7 @@ end)
 
 runFunction(function()
     local ChatTag = {Enabled = false}
-    ChatTag = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+    ChatTag = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
         Name = "ChatTag",
         Function = function(callback)
             if callback then
