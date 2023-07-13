@@ -10939,7 +10939,7 @@ runFunction(function()
     })
 end)
 
-local Messages = {"discO.gg/xsFYYPnnas",  "FOLD", ":TROLL:"}
+local Messages = {"disc.gg/xsFYYPnnas",  "FOLD", ":TROLL:"}
 local old
 local FunnyIndicator = {Enabled = false}
 FunnyIndicator = GuiLibrary.ObjectsThatCanBeSaved.WorldWindow.Api.CreateOptionsButton({
