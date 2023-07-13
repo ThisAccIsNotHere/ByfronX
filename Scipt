@@ -10998,3 +10998,45 @@ runFunction(function()
 		end
 	})
 end)
+
+runFunction(function()
+local hpbar = {Enabled = false}
+			hpbar = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+				Name = "CustomHealthbar",
+				Function = function(callback)
+					if callback then
+						task.spawn(function()
+							repeat task.wait() until game:IsLoaded()
+							getgenv().loadchecked = true
+							repeat task.wait(0.1)
+								local healthbar = lplr.PlayerGui:WaitForChild("hotbar"):WaitForChild("1"):WaitForChild("HotbarHealthbarContainer"):WaitForChild("HealthbarProgressWrapper"):WaitForChild("1")
+								if hpbar.Enabled and hotbarmode.Value =="Default" then
+									healthbar.BackgroundColor3 = Color3.fromRGB(0, 4, 255)
+								elseif hpbar.Enabled and hotbarmode.Value == "Custom" then
+								healthbar.BackgroundColor3 = Color3.fromHSV(CustomHealthbarColor.Hue, CustomHealthbarColor.Sat, CustomHealthbarColor.Value)
+								     counter = counter + 0.01
+								elseif hpbar.Enabled and hotbarmode.Value == "Dynamic" then
+									healthbar.BackgroundColor3 = Color3.fromHSV(math.clamp(entityLibrary.character.Humanoid.Health / entityLibrary.character.Humanoid.MaxHealth, 0, 1) / 2.5, 0.89, 1.5)
+							end
+							until not hpbar.Enabled
+				end)
+				else
+					lplr.PlayerGui:WaitForChild("hotbar"):WaitForChild("1"):WaitForChild("HotbarHealthbarContainer"):WaitForChild("HealthbarProgressWrapper"):WaitForChild("1").BackgroundColor3 = Color3.fromRGB(203,54,36)
+					end
+				end,
+				HoverText = "customize your hotbar."
+			})
+			hotbarmode = hpbar.CreateDropdown({
+				Name = "Healthbar",
+				List = {"Default", "Dynamic", "Custom"},
+				Function = function() end
+			})
+			CustomHealthbarColor = hpbar.CreateColorSlider({
+				Name = "Custom Color",
+				Function = function(h, s, v)
+					if hpbar.Enabled and hotbarmode.Value == "Cool" then
+						obj.Parent.TextColor3 = Color3.fromHSV(h, s, v)
+					end
+				end
+			})
+end)
