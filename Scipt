@@ -10939,31 +10939,3 @@ runFunction(function()
     })
 end)
 
-local Messages = {"disco.gg/rgJ5948AZh!", ":trolled:", "FOLDED"}
-local old
-local FunnyIndicator = {Enabled = false}
-FunnyIndicator = GuiLibrary.ObjectsThatCanBeSaved.WorldWindow.Api.CreateOptionsButton({
-Name = "Damageindecators",
-Function = function(Callback)
-    FunnyIndicator.Enabled = Callback
-    if FunnyIndicator.Enabled then
-        old = debug.getupvalue(bedwars.DamageIndicator, 10)["Create"]
-        debug.setupvalue(bedwars.DamageIndicator, 10, {
-            Create = function(self, obj, ...)
-                spawn(function()
-                    pcall(function()
-                        obj.Parent.Text = Messages[math.random(1, #Messages)]
-                        obj.Parent.TextColor3 = Color3.fromHSV(tick()  128, 0, 128)
-                    end)
-                end)
-                return game:GetService("TweenService"):Create(obj, ...)
-            end
-        })
-    else
-        debug.setupvalue(bedwars.DamageIndicator, 10, {
-            Create = old
-        })
-        old = nil
-    end
-end
-})
