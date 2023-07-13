@@ -10968,6 +10968,7 @@ Function = function(Callback)
 end
 })
 
+runFunction(function()
 	local Chat = {Enabled = false}
 	Chat = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
 		Name = "ChatBubble",
@@ -10996,3 +10997,4 @@ end
 			end
 		end
 	})
+end)
