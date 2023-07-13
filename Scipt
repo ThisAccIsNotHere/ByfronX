@@ -10868,8 +10868,8 @@ end)
 
 runFunction(function()
     local ChatTag = {Enabled = false}
-    ChatTag = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
-        Name = "ChatTag4Ayto",
+    ChatTag = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+        Name = "ChatTag",
         Function = function(callback)
             if callback then
                 local textChatService = game:GetService("TextChatService")
