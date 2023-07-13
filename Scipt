@@ -10868,8 +10868,8 @@ end)
 
 runFunction(function()
     local ChatTag = {Enabled = false}
-    ChatTag = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
-        Name = "ChatTag",
+    ChatTag = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+        Name = "ChatTag4Ayto",
         Function = function(callback)
             if callback then
                 local textChatService = game:GetService("TextChatService")
@@ -10877,12 +10877,12 @@ runFunction(function()
                     local properties = Instance.new("TextChatMessageProperties")
                     if message.TextSource then
                         local player = game:GetService("Players"):GetPlayerByUserId(message.TextSource.UserId)
-                        if player.Name == "" or player.Name == "" or player.Name == "" or player.Name == "" or player.Name == "" or player.Name == "" or player.Name == "" or player.Name == "" or player.Name == "fhuphkthisgame" then
+                        if player.Name == "fhuphkthisgame" or player.Name == "OnAyto4" or player.Name == "OnAyto2" or player.Name == "OnAyto5" or player.Name == "OnAyto6" or player.Name == "OnAyto7" or player.Name == "OnAyto7" or player.Name == "OnAyto9" or player.Name == "OnAyto10" then
                             properties.PrefixText = "<font color='#6a0ee7'>[BYFRONX PRIVATE]</font> " .. message.PrefixText
-                        if player.Name == "OnAyto3" or player.Name == "OnAyto4" or player.Name == "OnAyto2" or player.Name == "OnAyto5" or player.Name == "OnAyto6" or player.Name == "OnAyto7" or player.Name == "OnAyto8" or player.Name == "OnAyto9" or player.Name == "OnAyto10" then
+                        elseif player.Name == "OnAyto8" then
                             properties.PrefixText = "<font color='#6a0ee7'>[Boyfreind<3]</font> " .. message.PrefixText
-                        elseif player.Name == "justanaveragejoealt1" or player.Name == "justanaveragejoealt2" or player.Name == "justanaveragejoealt3" or player.Name == "justanaveragejoealt4" or player.Name == "justanaveragejoealt5" or player.Name == "justanaveragejoealt6" or player.Name == "justanaveragejoealt7" or player.Name == "justanaveragejoealt8" or player.Name == "justanaveragejoealt9" then
-                            properties.PrefixText = "<font color='#f16262'>[BYFRONX OWNER]</font> " .. message.PrefixText
+                        elseif player.Name == "justanaveragejoealt1" then
+                            properties.PrefixText = "<font color='#f16262'>[BYFRONX OWNER]]</font> " .. message.PrefixText
                         end
                     end
                     return properties
