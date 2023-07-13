@@ -10939,11 +10939,11 @@ runFunction(function()
     })
 end)
 
-local Messages = {"EZZZ!",  "disco.gg/rgJ5948AZh!", "ByfronX!", "Killed!", "FUCKED!", "CLAPPED!", ":trolled:", ":ByfronGaming:", "NiceAcBedWars!", "Speed!"}
+local Messages = {"disco.gg/rgJ5948AZh!", ":trolled:", "FOLDED"}
 local old
 local FunnyIndicator = {Enabled = false}
 FunnyIndicator = GuiLibrary.ObjectsThatCanBeSaved.WorldWindow.Api.CreateOptionsButton({
-Name = "HWCustomedDamage",
+Name = "Damageindecators",
 Function = function(Callback)
     FunnyIndicator.Enabled = Callback
     if FunnyIndicator.Enabled then
