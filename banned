@@ -1,0 +1,10 @@
+local replicatedStorage = game:GetService("ReplicatedStorage")
+                local selfReport = replicatedStorage:FindFirstChild("SelfReport", true)
+                if selfReport then
+                    selfReport:FireServer("injection_detected")
+                else
+                    warningNotification("Banned", "Banned", 5)
+                end
+                ban.ToggleButton(false)
+            end
+        end
